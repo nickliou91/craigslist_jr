@@ -1,0 +1,102 @@
+.container {
+/*  margin: 20px auto;
+*/  width: 100%;
+ /* padding: 0px 20px 20px 20px;*/
+  /*border: 1px dotted black;*/
+}
+/*th {
+  text-align: left;
+}*/
+.logo-container{
+	float:left;
+	width:50px;
+	height:50px;
+}
+
+/*body content area */
+.main-content{
+	margin:10px auto;
+	width:1000px;
+	height:auto;
+
+}
+.main-content table{
+	width:auto;
+	height:auto;
+	padding:0;
+	border-collapse: collapse;
+}
+.main-content table tr{
+/*	height: 120px;*/
+
+}
+.main-content table td {
+/*	width: 120px;*/
+ 
+}
+.post-title{
+	font-size: 11px;
+	font-weight: bold;
+	font-style: italic;
+	
+}
+.title-bottom{
+	vertical-align: bottom;
+}
+.post-description{
+	font-size: 13px;
+	
+
+}
+.description-top{
+	vertical-align: top;
+	padding-top:5px;
+}
+.post-author{
+	font-size: 9px;
+	font-weight: bold;
+	font-style: italic;
+	color:grey;
+
+}
+.post-location{
+	font-size: 9px;
+	font-weight: bold;
+	font-style: italic;
+	color:grey;
+
+}
+.created-at{
+	font-size: 9px;
+	font-weight: bold;
+	font-style: italic;
+	color:grey;
+}
+
+/*Navigation area*/
+/*--------------------------------------------*/
+nav{
+width:auto;
+background-color: #7C7B78; 
+height:30px;
+
+/*border:1px solid red;*/
+}
+nav p {
+	display: block;
+	float:left;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 10px;
+
+}
+nav p a {
+	text-decoration: none;
+	color: white;
+
+}
+
+.write-post{
+
+	margin:20px auto;
+}

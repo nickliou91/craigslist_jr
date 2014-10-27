@@ -1,0 +1,35 @@
+<div class="container">
+
+
+ <div class = "main-content">
+  <table>
+    <% @post.each do |epost| %>
+    <% date_created = epost.created_at %>
+    <% date_created = date_created.strftime("Created at %m/%d/%Y  %I:%M%p") %>
+ 
+    <tr > <td style="border-bottom:1px solid black;" rowspan = "2">
+      <img src="<%= epost.image_link %>" width="100px" height="100px"/> 
+    </td>
+
+    
+    <td class="title-bottom" height="20px"> <span class="post-title"> <%= epost.title %> </span> </td>
+    <td class= "title-bottom"> <span class="post-author-pic"><img src="/images/user-logo.jpeg" width="15px" height="15px" </span> </td>
+    <td width="100px"> <span class ="post-author"><%= epost.author %> </span>
+      
+    </td>
+
+    <td width="100px">
+      <span class="post-location">Location: <%= epost.location %> </span>
+    </td>
+    <td width="140px">  <span class ="created-at"><%= "#{date_created}" %> </span> </td>
+    </tr>
+    <tr style="border-bottom:1px solid black;">
+      <td width= "100%" colspan="5" class="description-top"><span class="post-description"> <%= epost.description %> <span> </td>
+    </tr>
+   
+    <% end %>
+  </table>
+
+  </div>
+
+</div>

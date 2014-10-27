@@ -1,0 +1,42 @@
+<div class="container">
+
+
+ <div class = "main-content">
+  <h3> <%= @post.category.category_name %> </h3>
+  <table>
+    
+    <% date_created = @post.created_at %>
+    <% date_created = date_created.strftime("Created at %m/%d/%Y  %I:%M%p") %>
+    <tr > <td style="border-bottom:1px solid black;" rowspan = "2">
+      <img src="<%= @post.image_link %>" width="100px" height="100px"/> 
+    </td>
+
+    
+    <td class="title-bottom" height="20px"> <span class="post-title"> <%= @post.title %> </span> </td>
+    <td class= "title-bottom"> <span class="post-author-pic"><img src="/images/user-logo.jpeg" width="15px" height="15px" </span> </td>
+    <td width="100px"> <span class ="post-author"><%= @post.author %> </span>
+      
+    </td>
+
+    <td width="100px">
+      <span class="post-location">Location: <%= @post.location %> </span>
+    </td>
+    <td width="140px">  <span class ="created-at"><%= "#{date_created}" %> </span> </td>
+    </tr>
+    <tr width="100%" style="border-bottom:1px solid black;">
+      <td width="100%" colspan="5" class="description-top"><span class="post-description"> <%= @post.description %> <span> </td>
+    </tr>
+   
+  </table>
+  <h4> Please use the link below to edit your posts </h4>
+     <p> <a href="/<%=@post.id%>/edit">
+        Edit Post 
+      </a> </p>
+    <h4> OR you can click this button to delete the post </h4>
+    <form action="/posts/<%= @post.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button value="submit">Delete</button>
+</form>
+  </div>
+</div>
+  

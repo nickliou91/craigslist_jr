@@ -1,0 +1,69 @@
+<div class="container">
+
+
+ <div class = "main-content">
+ 	<h3> Category : <%= params[:category_name] %></h3>
+  <table>
+  	
+
+
+    <% @post.each do |epost| %>
+    <% date_created = epost.created_at %>
+    <% date_created = date_created.strftime("Created at %m/%d/%Y  %I:%M%p") %>
+ 
+    <tr > <td style="border-bottom:1px solid black;" rowspan = "2">
+      <img src="<%= epost.image_link %>" width="100px" height="100px"/> 
+    </td>
+
+    
+    <td class="title-bottom" height="20px"> <span class="post-title"> <a href= '<%= "/posts/#{epost.id}" %>'><%= epost.title %> </span> </td>
+    <td class= "title-bottom"> <span class="post-author-pic"><img src="/images/user-logo.jpeg" width="15px" height="15px" </span> </td>
+    <td width="100px"> <span class ="post-author"><%= epost.author %> </span>
+      
+    </td>
+
+    <td width="100px">
+      <span class="post-location">Location: <%= epost.location %> </span>
+    </td>
+    <td width="140px">  <span class ="created-at"><%= "#{date_created}" %> </span> </td>
+    </tr>
+    <tr width="100%" style="border-bottom:1px solid black;">
+      <td width="100%" colspan="5" class="description-top"><span class="post-description"> <%= epost.description %> <span> </td>
+    </tr>
+   
+    <% end %>
+  </table>
+
+  <div class ="write-post" >
+    <form action= "<%= params[:category_name] %>/new_post" method="post" class="basic-grey">
+    <h1>Post something  
+        <!-- <span>Please fill all the texts in the fields.</span>-->
+    </h1> 
+    <label>
+        <span>Your Name :</span>
+        <input id="author" type="text" name="author" placeholder="Your Full Name" />
+    </label>
+    
+   <!--  <label>
+        <span>Your Email :</span>
+        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+    </label> -->
+     <label>
+        <span>Subject :</span>
+        <input id="title" type="text" name="title" placeholder="Your subject" />
+    </label> 
+    <label>
+        <span>Message :</span>
+        <textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
+    </label> 
+       
+     <label>
+        <span>&nbsp;</span>
+
+        <input type="Submit" class="button" value="Post" /> 
+    </label>    
+</form>
+
+  </div>
+
+ </div>

@@ -1,0 +1,32 @@
+	<div class ="write-post" >
+    <form action= '<%= "/#{@post.id}" %>' method="post" class="basic-grey">
+    <h1>Update the Post 
+        <!-- <span>Please fill all the texts in the fields.</span>-->
+    </h1> 
+    <label>
+        <span>Your Name :</span>
+        <input id="author" type="text" name="post[author]" value= "<%= @post.author %>" />
+    </label>
+    
+   <!--  <label>
+        <span>Your Email :</span>
+        <input id="email" type="email" name="email" placeholder="Valid Email Address" />
+    </label> -->
+     <label>
+        <span>Subject :</span>
+        <input id="title" type="text" name="post[title]" value = "<%= @post.title %>" />
+    </label> 
+    <label>
+        <span>Message :</span>
+        <textarea id="message" name="post[description]" ><%= @post.description %></textarea>
+    </label> 
+       
+     <label>
+        <span>&nbsp;</span>
+
+        <input type="Submit" class="button" value="Updated" /> 
+    </label>    
+</form>
+
+  </div>
+
